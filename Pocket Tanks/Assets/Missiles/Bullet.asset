@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8407ec5eae7d8844bbde0c70add8d775, type: 3}
+  m_Name: Bullet
+  m_EditorClassIdentifier: 
+  missileName: Bullet
+  explosionEffect: {fileID: 3047868198969842636, guid: d0a191c8ef280e645ba45bb6d64edc5c,
+    type: 3}
+  damage: 10
+  radius: 2
+  material: {fileID: 2100000, guid: d32d935b0a23f5e4290b2c3326b553b2, type: 2}
+  mesh: {fileID: 4711208715938537054, guid: ca4e5ac9a645669478d5655ac0daa97e, type: 3}

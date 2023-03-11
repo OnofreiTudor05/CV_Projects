@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8407ec5eae7d8844bbde0c70add8d775, type: 3}
+  m_Name: Ballistic
+  m_EditorClassIdentifier: 
+  missileName: Ballistic
+  explosionEffect: {fileID: 9033724612331974320, guid: d23e15c741818a14986021a8bcf28863,
+    type: 3}
+  damage: 50
+  radius: 0.3
+  material: {fileID: 2100000, guid: f0b308840c0923741b03ec1a45451030, type: 2}
+  mesh: {fileID: -8803937527578110353, guid: b1fc8c65c63031c4f8e3fb96ebe26c8f, type: 3}

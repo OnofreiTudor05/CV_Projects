@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8407ec5eae7d8844bbde0c70add8d775, type: 3}
+  m_Name: Pillow
+  m_EditorClassIdentifier: 
+  missileName: Pillow
+  explosionEffect: {fileID: 5375761275163600402, guid: f4b52c9173a279645a5649b31d1cd7b9,
+    type: 3}
+  damage: 25
+  radius: 0.5
+  material: {fileID: 2100000, guid: 81087aa9cb0bf164083fb8db66cf80fb, type: 2}
+  mesh: {fileID: 4711208715938537054, guid: 24196ff7cae54ff4d9e9248a18d26bb4, type: 3}

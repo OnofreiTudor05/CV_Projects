@@ -1,0 +1,555 @@
+#:import GD GlobalShared
+
+WindowManager:
+    FirstWindow:
+    SecondWindow:
+    LiveTranslation:
+    SignImprover:
+    LearnTheBasics:
+    About:
+
+<About>:
+    name: "About"
+
+    RelativeLayout:
+        Label:
+            text: "Start -> About"
+            font_size: 25
+            background_color: (1, 1, 1, 0.4)
+            size_hint: (1, 0.1)
+            pos_hint: {"center_x": 0.5, "center_y": 0.9}
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+        ScrollView:
+            scroll_type: ['bars', 'content']
+            bar_width: 10
+            pos_hint: {"center_x": 0.5, "center_y": 0.45}
+            size_hint: (0.8, 0.7)
+            Label:
+                markup: True
+                text: root.label_text
+                canvas.before:
+                    Color:
+                        rgba: (0, 0, 0, 0.5)
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                size_hint_y: None
+                height: self.texture_size[1]
+                text_size: self.width, None
+                font_size: 25
+                padding: 20, 20
+
+        Button:
+            background_color: 0, 0, 0, 0
+            color: 0, 0, 0, 1
+            size_hint: (0.2, 0.1)
+            pos_hint: {"center_x": 0.5, "center_y": 0.05}
+            text: ""
+            font_size: 32
+            on_release:
+                app.root.current = "FirstWindow"
+                root.manager.transition.direction = 'left'
+            Image:
+                source: '_def/Back2.png'
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y
+                pos: self.parent.pos
+                size: self.parent.size
+                allow_stretch: True
+                keep_ratio: True
+
+
+<FirstWindow>:
+    name: "FirstWindow"
+    GridLayout:
+        canvas.before:
+            Color:
+                rgba: 21/255, 93/255, 39/255, 1
+            Rectangle:
+                pos: root.pos
+                size: root.size
+        lines: 3
+        cols: 1
+
+        RelativeLayout:
+            canvas.before:
+                Color:
+                    rgba: 1, 1, 1, 0.1
+                Rectangle:
+                    pos: root.pos
+                    size: root.size
+            orientation: 'vertical'
+            Label:
+                markup: True
+                text: "Welcome to \n[size=48][b]ASLearner![/b]"
+                font_size: 32
+                halign: 'center'
+                valign: 'middle'
+
+        RelativeLayout:
+            Button:
+                background_color: 0, 0, 0, 0
+                color: 0, 0, 0, 1
+                pos_hint: {"center_x": 0.5}
+                size_hint: (0.5, 0.4)
+                bold: True
+                text: "Start"
+                font_size: 32
+
+                canvas.before:
+                    Color:
+                        rgba: 232/255, 235/255, 228/255, 1
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [20]
+
+                on_release:
+                    app.root.current = "SecondWindow"
+                    root.manager.transition.direction = 'left'
+
+        RelativeLayout:
+            Button:
+                pos_hint: {"center_x": 0.25}
+                size_hint: 0.25, 0.5
+                background_color: 0, 0, 0, 0
+                on_release:
+                    app.root.current = "About"
+                    root.manager.transition.direction = 'right'
+                Image:
+                    source: '_def/Ask1.png'
+                    center_x: self.parent.center_x
+                    center_y: self.parent.center_y
+                    pos: self.parent.pos
+                    size: self.parent.size
+                    allow_stretch: True
+                    keep_ratio: True
+            Button:
+                pos_hint: {"center_x": 0.75}
+                text: 'Exit'
+                size_hint: 0.25, 0.5
+                background_color: 0, 0, 0, 0
+                on_release:
+                    root.close_app()
+                Image:
+                    source: '_def/Exit1.png'
+                    center_x: self.parent.center_x
+                    center_y: self.parent.center_y
+                    pos: self.parent.pos
+                    size: self.parent.size
+                    allow_stretch: True
+                    keep_ratio: True
+
+<SecondWindow>:
+    name: "SecondWindow"
+    canvas.before:
+        Color:
+            rgba: 21/255, 93/255, 39/255, 1
+        Rectangle:
+            pos: root.pos
+            size: root.size
+
+    GridLayout:
+        lines: 3
+        cols: 1
+
+        RelativeLayout:
+            Label:
+                color: (1, 1, 1, 1)
+                size_hint: (1, 0.25)
+                pos_hint: {"x": 0, "y": 0.65}
+                halign: 'left'
+                text: "- Start"
+                font_size: 25
+                background_color: (1, 1, 1, 0.2)
+
+                canvas.before:
+                    Color:
+                        rgba: self.background_color
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+
+        RelativeLayout:
+            Button:
+                background_color: 0, 0, 0, 0
+                color: 0, 0, 0, 1
+                canvas.before:
+                    Color:
+                        rgba: 232/255, 235/255, 228/255, 1
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [20]
+                size_hint: (0.75, 0.3)
+                pos_hint: {"center_x": 0.5, "center_y": 0.9}
+                text: "Live Translation"
+                font_size: 32
+                on_release:
+                    app.root.current = "LiveTranslation"
+                    root.manager.transition.direction = 'left'
+                    GD.state_live_translation = True
+                    GD.live_text_translated = ""
+
+            Button:
+                background_color: 0, 0, 0, 0
+                color: 0, 0, 0, 1
+                canvas.before:
+                    Color:
+                        rgba: 232/255, 235/255, 228/255, 1
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [20]
+
+                size_hint: (0.75, 0.3)
+                pos_hint: {"center_x": 0.5, "center_y": 0.45}
+                text: "Sign Improver"
+                font_size: 32
+                on_release:
+                    app.root.current = "SignImprover"
+                    root.manager.transition.direction = 'left'
+                    GD.state_sign_improver = True
+                    GD.live_sign_improver_text = ""
+
+            Button:
+                background_color: 0, 0, 0, 0
+                color: 0, 0, 0, 1
+                canvas.before:
+                    Color:
+                        rgba: 232/255, 235/255, 228/255, 1
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [20]
+
+                size_hint: (0.75, 0.3)
+                pos_hint: {"center_x": 0.5, "center_y": 0}
+                text: "Learn the basics"
+                font_size: 32
+                on_release:
+                    app.root.current = "LearnTheBasics"
+                    root.manager.transition.direction = 'left'
+                    GD.state_learn_the_basics = True
+                    GD.live_learning_basics_text = ""
+
+        RelativeLayout:
+            Button:
+                background_color: 0, 0, 0, 0
+                color: 0, 0, 0, 1
+                size_hint: (0.5, 0.5)
+                pos_hint: {"center_x": 0.5}
+                text: ""
+                font_size: 32
+                on_release:
+                    app.root.current = "FirstWindow"
+                    root.manager.transition.direction = 'right'
+                Image:
+                    source: '_def/Back1.png'
+                    center_x: self.parent.center_x
+                    center_y: self.parent.center_y
+                    pos: self.parent.pos
+                    size: self.parent.size
+                    allow_stretch: True
+                    keep_ratio: True
+
+
+<LiveTranslation>:
+    name: "LiveTranslation"
+    canvas.before:
+        Color:
+            rgba: 21/255, 93/255, 39/255, 1
+        Rectangle:
+            pos: root.pos
+            size: root.size
+    RelativeLayout:
+        Label:
+            color: (1, 1, 1, 1)
+            size_hint: (1, 0.05)
+            pos_hint: {"center_x": 0.5, "center_y": 0.95}
+            halign: 'left'
+            text: "- Start -Live Translation"
+            font_size: 25
+            background_color: (1, 1, 1, 0.2)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+        Image:
+            id: camera
+            size_hint_y: 0.4
+            pos_hint: {"center_x": 0.5, "center_y": 0.65}
+            allow_stretch: True
+            keep_ratio: True
+
+
+        Label:
+            pos_hint: {"center_x": 0.5, "center_y": 0.4}
+            size_hint: (1, 0.1)
+            markup: True
+            text: "[size=36]Incoming message: "
+            font_size: 26
+        ScrollView:
+            scroll_type: ['bars', 'content']
+            bar_width: 10
+            pos_hint: {"center_x": 0.5, "center_y": 0.25}
+            size_hint: (1, 0.2)
+            Label:
+                canvas.before:
+                    Color:
+                        rgba: (1, 1, 1, 0.5)
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                color: 0, 0, 0, 1
+                id: prediction
+                size_hint_y: None
+                height: self.texture_size[1]
+                text_size: self.width, None
+                font_size: 24
+                padding: 10, 10
+
+        Button:
+            background_color: 0, 0, 0, 0
+            color: 0, 0, 0, 1
+            size_hint: (0.2, 0.1)
+            pos_hint: {"center_x": 0.5, "center_y": 0.05}
+            text: ""
+            font_size: 32
+            on_release:
+                app.root.current = "SecondWindow"
+                root.manager.transition.direction = 'right'
+                GD.state_live_translation = False
+            Image:
+                source: '_def/Back1.png'
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y
+                pos: self.parent.pos
+                size: self.parent.size
+                allow_stretch: True
+                keep_ratio: True
+
+<LearnTheBasics>:
+    name: "LearnTheBasics"
+    canvas.before:
+        Color:
+            rgba: 21/255, 93/255, 39/255, 1
+        Rectangle:
+            pos: root.pos
+            size: root.size
+    BoxLayout:
+        orientation: "vertical"
+
+        RelativeLayout:
+            size_hint_y: 0.1
+            Label:
+                color: (1, 1, 1, 1)
+                size_hint: (1, 0.5)
+                pos_hint: {"x": 0, "y": 0.45}
+                halign: 'left'
+                text: "- Start -Learn The Basics"
+                font_size: 25
+                background_color: (1, 1, 1, 0.2)
+
+                canvas.before:
+                    Color:
+                        rgba: self.background_color
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+
+        BoxLayout:
+            size_hint_y: 0.4
+            orientation: "vertical"
+            Label:
+                id: toSignText
+                size_hint_y: 0.2
+                markup: True
+                text: "[size=30]You have to sign: "
+                font_size: 26
+                halign: 'center'
+                valign: 'middle'
+
+                canvas.before:
+                    Color:
+                        rgba: (1, 1, 1, 0.5)
+                    Rectangle:
+                        size: self.parent.size
+                        pos: self.parent.pos
+            Image:
+                id: toSignImage
+                size_hint: (0.8, 0.8)
+                pos_hint: {"center_x": 0.5}
+                allow_stretch: True
+                keep_ratio: True
+        BoxLayout:
+            orientation: "vertical"
+            size_hint_y: 0.4
+            Label:
+                id: yourSignText
+                size_hint_y: 0.2
+                markup: True
+                text: ""
+                font_size: 26
+                halign: 'center'
+                valign: 'middle'
+
+
+            Image:
+                size_hint: (0.8, 0.8)
+                id: yourSignImage
+                pos_hint: {"center_x": 0.5}
+                allow_stretch: True
+                keep_ratio: True
+
+        RelativeLayout:
+
+            size_hint_y: 0.1
+            Button:
+                background_color: 0, 0, 0, 0
+                # background_normal: ""
+                color: 1, 1, 0, 1
+                size_hint: (0.5, 0.9)
+                pos_hint: {"center_x": 0.5}
+                text: ""
+                font_size: 32
+                on_release:
+                    app.root.current = "SecondWindow"
+                    root.manager.transition.direction = 'right'
+                    GD.state_learn_the_basics = False
+                    GD.live_learning_basics_text = ""
+                    GD.learning_index = 0
+                canvas.before:
+                    Color:
+                        rgba: 137/255, 105/255, 120/255, 1
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [20]
+                Image:
+                    source: '_def/Back.png'
+                    center_x: self.parent.center_x
+                    center_y: self.parent.center_y
+                    pos: self.parent.pos
+                    size: self.parent.size
+                    allow_stretch: True
+                    keep_ratio: True
+
+<SignImprover>:
+    name: "SignImprover"
+    canvas.before:
+        Color:
+            rgba: 21/255, 93/255, 39/255, 1
+        Rectangle:
+            pos: root.pos
+            size: root.size
+    BoxLayout:
+        orientation: "vertical"
+        BoxLayout:
+            background_color: (1, 1, 1, 0.2)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+            size_hint_y: 0.45
+
+            orientation: "vertical"
+
+            Label:
+                color: (1, 1, 1, 1)
+                size_hint: (1, 0.15)
+                pos_hint: {"x": 0, "y": 0.45}
+                halign: 'left'
+                text: "- Start -Sign Improver"
+                font_size: 25
+                background_color: (1, 1, 1, 0.2)
+
+                canvas.before:
+                    Color:
+                        rgba: self.background_color
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+
+            Label:
+                id: SignImproverText
+                size_hint_y: 0.2
+                markup: True
+                text: "[size=30]You have to sign: "
+                font_size: 26
+                halign: 'center'
+                valign: 'middle'
+            Button:
+                id: SignImproverImage
+                size_hint: (0.8, 0.8)
+                font_size: 32
+                pos_hint: {"center_x": 0.5}
+                allow_stretch: True
+                keep_ratio: True
+                text: ""
+                on_release:
+                    root.reveal_hint()
+                    root.animate_reveal(self)
+
+        BoxLayout:
+            orientation: "vertical"
+            size_hint_y: 0.45
+            Label:
+                id: yourText
+                size_hint_y: 0.2
+                markup: True
+                text: ""
+                font_size: 26
+                halign: 'center'
+                valign: 'middle'
+            Image:
+                size_hint: (0.8, 0.8)
+                id: yourImage
+                pos_hint: {"center_x": 0.5}
+                allow_stretch: True
+                keep_ratio: True
+
+        RelativeLayout:
+            size_hint_y: 0.1
+            Button:
+                background_color: 0, 0, 0, 0
+                # background_normal: ""
+                color: 1, 1, 0, 1
+                size_hint: (0.5, 0.9)
+                pos_hint: {"center_x": 0.5}
+                text: ""
+                font_size: 32
+                on_release:
+                    app.root.current = "SecondWindow"
+                    root.manager.transition.direction = 'right'
+                    GD.state_sign_improver = False
+                    GD.live_sign_improver = ""
+                    GD.sign_improver_index = 0
+                canvas.before:
+                    Color:
+                        rgba: 137/255, 105/255, 120/255, 1
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [20]
+                Image:
+                    source: '_def/Back.png'
+                    center_x: self.parent.center_x
+                    center_y: self.parent.center_y
+                    pos: self.parent.pos
+                    size: self.parent.size
+                    allow_stretch: True
+                    keep_ratio: True
+
