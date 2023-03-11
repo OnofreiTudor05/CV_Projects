@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="../resurse/Poze/icon.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../resurse/styles/seemore.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>See More</title>
+</head>
+
+<body style="background-color:#ba9b77;">
+
+    <p style="text-align: center;">
+        <a id="backbutton" class="buton">Back</a>
+    </p>
+    <div id="errorMsg" style="text-align: center;"></div>
+    <div id="pagina">
+        <div class="completeaza">
+            <div>
+                Id:
+            </div>
+            <p id="eventid" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                An:
+            </div>
+            <p id="iyear" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Luna:
+            </div>
+            <p id="imonth" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Zi:
+            </div>
+            <p id="iday" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Id tara:
+            </div>
+            <p id="country" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Nume tara:
+            </div>
+            <p id="country_txt" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Id regiune:
+            </div>
+            <p id="region" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Regiune:
+            </div>
+            <p id="region_txt" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Judet:
+            </div>
+            <p id="provstate" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Oras:
+            </div>
+            <p id="city" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Latitudine:
+            </div>
+            <p id="latitude" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Longitudine:
+            </div>
+            <p id="longitude" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Locatie:
+            </div>
+            <p id="location" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Rezumat:
+            </div>
+            <p id="summary" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Succes:
+            </div>
+            <p id="success" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Suicide:
+            </div>
+            <p id="suicide" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Id atac:
+            </div>
+            <p id="attacktype1" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Atac:
+            </div>
+            <p id="attacktype1_txt" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Id tinta principala:
+            </div>
+            <p id="targtype1" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Tip tinta principala:
+            </div>
+            <p id="targtype1_txt" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Id tinta secundara:
+            </div>
+            <p id="targsubtype1" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Tip tinta secundara:
+            </div>
+            <p id="targsubtype1_txt" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Titlu tinta:
+            </div>
+            <p id="corp1" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Tinta:
+            </div>
+            <p id="target1" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Id nationalitate tinta:
+            </div>
+            <p id="natlty1" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Nationalitate tinta:
+            </div>
+            <p id="natlty1_txt" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Nume asociatie terorista:
+            </div>
+            <p id="gname" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Id tip arma:
+            </div>
+            <p id="weaptype1" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Tip arma:
+            </div>
+            <p id="weaptype1_txt" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Id subtip arma:
+            </div>
+            <p id="weapsubtype1" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Subtip arma:
+            </div>
+            <p id="weapsubtype1_txt" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Detalii arma:
+            </div>
+            <p id="weapdetail" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Numar victime:
+            </div>
+            <p id="nkill" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Numar ostatici:
+            </div>
+            <p id="nhostkid" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Id daune:
+            </div>
+            <p id="propextent" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Daune:
+            </div>
+            <p id="propextent_txt" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Rascumparare:
+            </div>
+            <p id="ransom" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Valoare rascumparare:
+            </div>
+            <p id="ransomamt" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Adaugari:
+            </div>
+            <p id="addnotes" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Consecinta 1:
+            </div>
+            <p id="scite1" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Consecinta 2:
+            </div>
+            <p id="scite2" class="textphp">
+            </p>
+        </div>
+
+        <div class="completeaza">
+            <div>
+                Consecinta 3:
+            </div>
+            <p id="scite3" class="textphp">
+            </p>
+        </div>
+    </div>
+    <script src="../resurse/js/seemore.js"></script>
+</body>
+
+</html>

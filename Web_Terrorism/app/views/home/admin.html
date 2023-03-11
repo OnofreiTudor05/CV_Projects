@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="../resurse/Poze/icon.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link href="../resurse/styles/admin.css" rel="stylesheet">
+    <title>Admin</title>
+</head>
+
+<body class="fundalAdmin">
+    <div class="container">
+        <form action="admin" method="POST">
+            <label for="numeUtilizator"> Username: </label> <br>
+            <input type="text" id="numeUtilizator" name="numeUtilizator" placeholder="Your username"><br>
+            <label for="password"> Password: </label> <br>
+            <input type="password" id="password" name="password" placeholder="Password"><br>
+            <input type="submit" id="submitData" value="Connect"> <br>
+            <div id="errorMsg"></div>
+        </form>
+    </div>
+    <script src="../resurse/js/login.js"></script>
+</body>
+
+</html>
